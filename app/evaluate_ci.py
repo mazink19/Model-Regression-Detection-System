@@ -1,7 +1,7 @@
 from app.comparator import compare_runs
 from app.evaluator import evaluate
 from app.storage import load_run
-
+from app.report import generate_html_report
 
 BASELINE_PATH = "baseline/baseline.json"
 
@@ -14,6 +14,13 @@ def main():
     current = evaluate()
 
     result = compare_runs(baseline=baseline,current=current,)
+    report_path = generate_html_report(
+    baseline=baseline,
+    current=current,
+    result=result,
+                )
+
+    print(f"HTML report: {report_path}")
 
     print("\n========== CI REGRESSION CHECK ==========")
 
