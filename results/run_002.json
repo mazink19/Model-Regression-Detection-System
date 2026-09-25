@@ -1,0 +1,808 @@
+{
+  "total_cases": 100,
+  "passed": 86,
+  "failed": 14,
+  "accuracy": 0.86,
+  "cases": [
+    {
+      "case_id": "case_001",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer reports duplicate subscription charge and requests refund.",
+      "actual_summary": "Customer was double-charged for their monthly subscription and requests a refund.",
+      "passed": true
+    },
+    {
+      "case_id": "case_002",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports app crashing during PDF upload.",
+      "actual_summary": "App crashes whenever a PDF is uploaded.",
+      "passed": true
+    },
+    {
+      "case_id": "case_003",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer cannot access account due to forgotten password.",
+      "actual_summary": "User forgot password and cannot log in.",
+      "passed": true
+    },
+    {
+      "case_id": "case_004",
+      "expected_category": "general",
+      "actual_category": "billing",
+      "expected_summary": "Customer asks about student discounts.",
+      "actual_summary": "The user asks if student discounts are available.",
+      "passed": false
+    },
+    {
+      "case_id": "case_005",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer was charged after canceling subscription.",
+      "actual_summary": "Customer canceled last week but was still billed today.",
+      "passed": true
+    },
+    {
+      "case_id": "case_006",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports app freezing after latest update.",
+      "actual_summary": "Screen freezes when opening settings after the latest update.",
+      "passed": true
+    },
+    {
+      "case_id": "case_007",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer did not receive email verification code.",
+      "actual_summary": "User did not receive the email verification code.",
+      "passed": true
+    },
+    {
+      "case_id": "case_008",
+      "expected_category": "general",
+      "actual_category": "account",
+      "expected_summary": "Customer asks about multi-device usage.",
+      "actual_summary": "User asks if the service can be used on multiple devices simultaneously.",
+      "passed": false
+    },
+    {
+      "case_id": "case_009",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer requests refund.",
+      "actual_summary": "Customer requests a refund.",
+      "passed": true
+    },
+    {
+      "case_id": "case_010",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer sarcastically reports app crashing on launch.",
+      "actual_summary": "App crashes on launch after update",
+      "passed": true
+    },
+    {
+      "case_id": "case_011",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer cannot access account after changing phone.",
+      "actual_summary": "User cannot log in after changing phone",
+      "passed": true
+    },
+    {
+      "case_id": "case_012",
+      "expected_category": "general",
+      "actual_category": "billing",
+      "expected_summary": "Customer asks about supported payment methods.",
+      "actual_summary": "User asks which payment methods are supported.",
+      "passed": false
+    },
+    {
+      "case_id": "case_013",
+      "expected_category": "billing",
+      "actual_category": "account",
+      "expected_summary": "Customer upgraded account but premium features remain inaccessible.",
+      "actual_summary": "User upgraded to premium but still cannot access premium features.",
+      "passed": false
+    },
+    {
+      "case_id": "case_014",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports slow search performance.",
+      "actual_summary": "Search feature is very slow to load.",
+      "passed": true
+    },
+    {
+      "case_id": "case_015",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer reports unauthorized account email change.",
+      "actual_summary": "User reports unauthorized change of account email address.",
+      "passed": true
+    },
+    {
+      "case_id": "case_016",
+      "expected_category": "general",
+      "actual_category": "general",
+      "expected_summary": "Customer asks whether dark mode is available.",
+      "actual_summary": "Inquires whether a dark mode feature is available.",
+      "passed": true
+    },
+    {
+      "case_id": "case_017",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer questions unexpected invoice increase.",
+      "actual_summary": "Customer asks why invoice amount increased this month.",
+      "passed": true
+    },
+    {
+      "case_id": "case_018",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports image quality degradation after upload.",
+      "actual_summary": "Uploaded images become blurry after processing.",
+      "passed": true
+    },
+    {
+      "case_id": "case_019",
+      "expected_category": "account",
+      "actual_category": "technical",
+      "expected_summary": "Customer experiences repeated account logouts.",
+      "actual_summary": "User is being logged out of their account frequently.",
+      "passed": false
+    },
+    {
+      "case_id": "case_020",
+      "expected_category": "general",
+      "actual_category": "general",
+      "expected_summary": "Customer asks if developer API is available.",
+      "actual_summary": "Inquiry about API availability for developers",
+      "passed": true
+    },
+    {
+      "case_id": "case_021",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer reports incorrect billing currency.",
+      "actual_summary": "Customer was billed in USD despite their account being set to euros.",
+      "passed": true
+    },
+    {
+      "case_id": "case_022",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports app compatibility issue with Android 14.",
+      "actual_summary": "User reports that the mobile app fails to open on Android 14.",
+      "passed": true
+    },
+    {
+      "case_id": "case_023",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer asks about restoring deleted account.",
+      "actual_summary": "User asks if a mistakenly deleted account can be restored.",
+      "passed": true
+    },
+    {
+      "case_id": "case_024",
+      "expected_category": "general",
+      "actual_category": "billing",
+      "expected_summary": "Customer asks about annual subscription plans.",
+      "actual_summary": "User asks if a yearly subscription option is available.",
+      "passed": false
+    },
+    {
+      "case_id": "case_025",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer reports delayed refund processing.",
+      "actual_summary": "Customer reports not receiving a refund requested three weeks ago.",
+      "passed": true
+    },
+    {
+      "case_id": "case_026",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports notifications failing after update.",
+      "actual_summary": "Notification system stopped working after yesterday's update.",
+      "passed": true
+    },
+    {
+      "case_id": "case_027",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer reports password update not applying correctly.",
+      "actual_summary": "Password change didn't take effect; the old password still works.",
+      "passed": true
+    },
+    {
+      "case_id": "case_028",
+      "expected_category": "general",
+      "actual_category": "general",
+      "expected_summary": "Customer asks about Excel export support.",
+      "actual_summary": "User asks if the software can export data to Excel.",
+      "passed": true
+    },
+    {
+      "case_id": "case_029",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer cannot log into account.",
+      "actual_summary": "User cannot log into their account.",
+      "passed": true
+    },
+    {
+      "case_id": "case_030",
+      "expected_category": "technical",
+      "actual_category": "billing",
+      "expected_summary": "Customer reports payment page loading indefinitely.",
+      "actual_summary": "Payment page never loads and spins indefinitely.",
+      "passed": false
+    },
+    {
+      "case_id": "case_031",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer demands long-overdue refund with frustration.",
+      "actual_summary": "Customer is upset about a month-long delay in receiving a refund.",
+      "passed": true
+    },
+    {
+      "case_id": "case_032",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports data loss following an app update.",
+      "actual_summary": "User reports that all their files are missing after a recent update.",
+      "passed": true
+    },
+    {
+      "case_id": "case_033",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer is unable to log in after exhausting options.",
+      "actual_summary": "User unable to log in despite trying various methods.",
+      "passed": true
+    },
+    {
+      "case_id": "case_034",
+      "expected_category": "general",
+      "actual_category": "general",
+      "expected_summary": "Customer inquires about team collaboration functionality.",
+      "actual_summary": "Inquiry about whether team collaboration features are supported",
+      "passed": true
+    },
+    {
+      "case_id": "case_035",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer reports duplicate charge and dashboard access issue.",
+      "actual_summary": "Customer was double-charged and cannot access their dashboard.",
+      "passed": true
+    },
+    {
+      "case_id": "case_036",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer reports account suspended without reason.",
+      "actual_summary": "Account suspended without reason.",
+      "passed": true
+    },
+    {
+      "case_id": "case_037",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports non-functional CSV export button.",
+      "actual_summary": "Export to CSV button is non-functional when clicked.",
+      "passed": true
+    },
+    {
+      "case_id": "case_038",
+      "expected_category": "general",
+      "actual_category": "account",
+      "expected_summary": "Customer asks how to cancel their subscription.",
+      "actual_summary": "User asks how to cancel their subscription.",
+      "passed": false
+    },
+    {
+      "case_id": "case_039",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer reports being billed at old premium rate after downgrade.",
+      "actual_summary": "Customer downgraded their plan but continues to be billed at the premium rate.",
+      "passed": true
+    },
+    {
+      "case_id": "case_040",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports video playback failure specific to Safari.",
+      "actual_summary": "Videos fail to play on Safari but work on Chrome.",
+      "passed": true
+    },
+    {
+      "case_id": "case_041",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer reports suspicious logins suggesting account compromise.",
+      "actual_summary": "User suspects their account has been hacked due to logins from unfamiliar countries.",
+      "passed": true
+    },
+    {
+      "case_id": "case_042",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer requests a refund.",
+      "actual_summary": "Customer requests a refund.",
+      "passed": true
+    },
+    {
+      "case_id": "case_043",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Long-standing customer reports unauthorized charge and account lockout.",
+      "actual_summary": "Customer is upset about being charged for a plan they never signed up for and being locked out of their account.",
+      "passed": true
+    },
+    {
+      "case_id": "case_044",
+      "expected_category": "general",
+      "actual_category": "billing",
+      "expected_summary": "Customer asks whether storage is unlimited on current plan.",
+      "actual_summary": "Inquiry about whether the plan includes unlimited storage",
+      "passed": false
+    },
+    {
+      "case_id": "case_045",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer reports two-factor authentication codes failing.",
+      "actual_summary": "User reports that the two-factor authentication code they receive never works.",
+      "passed": true
+    },
+    {
+      "case_id": "case_046",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports app causing device crash.",
+      "actual_summary": "The app crashes the phone, causing a complete failure.",
+      "passed": true
+    },
+    {
+      "case_id": "case_047",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer is uncertain whether upgrade payment was processed.",
+      "actual_summary": "Customer is unsure whether the upgrade payment was processed",
+      "passed": true
+    },
+    {
+      "case_id": "case_048",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer unable to reset password.",
+      "actual_summary": "User cannot reset their password.",
+      "passed": true
+    },
+    {
+      "case_id": "case_049",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer urgently reports account lockout before a time-sensitive event.",
+      "actual_summary": "User's account is locked and they need immediate assistance.",
+      "passed": true
+    },
+    {
+      "case_id": "case_050",
+      "expected_category": "general",
+      "actual_category": "general",
+      "expected_summary": "Customer asks about free trial availability.",
+      "actual_summary": "The user asks whether a free trial is available.",
+      "passed": true
+    },
+    {
+      "case_id": "case_051",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports drag and drop not working on Windows 11.",
+      "actual_summary": "User reports that the drag-and-drop feature is broken on Windows 11.",
+      "passed": true
+    },
+    {
+      "case_id": "case_052",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer reports being overcharged relative to selected plan.",
+      "actual_summary": "Customer was charged $99 instead of the $9 plan they signed up for.",
+      "passed": true
+    },
+    {
+      "case_id": "case_053",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer cannot recover account due to forgotten password and email.",
+      "actual_summary": "User cannot remember their password or the email address used for the account.",
+      "passed": true
+    },
+    {
+      "case_id": "case_054",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer requests invoice for tax documentation.",
+      "actual_summary": "User requests an invoice for their recent payment for tax purposes.",
+      "passed": true
+    },
+    {
+      "case_id": "case_055",
+      "expected_category": "general",
+      "actual_category": "general",
+      "expected_summary": "Customer asks about desktop app availability.",
+      "actual_summary": "Inquiry about whether a desktop application is available versus only a web-based version.",
+      "passed": true
+    },
+    {
+      "case_id": "case_056",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer reports collaborator has unauthorized access to private files.",
+      "actual_summary": "User reports that a collaborator can view their private files, which should not happen.",
+      "passed": true
+    },
+    {
+      "case_id": "case_057",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports persistent login prompts despite using remember me option.",
+      "actual_summary": "User reports the app repeatedly asks for login despite selecting 'remember me'.",
+      "passed": true
+    },
+    {
+      "case_id": "case_058",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer requests switch from monthly to annual billing cycle.",
+      "actual_summary": "User wants to change their subscription from monthly to annual billing.",
+      "passed": true
+    },
+    {
+      "case_id": "case_059",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports blank screen with no files visible.",
+      "actual_summary": "User cannot see any files; everything appears blank.",
+      "passed": true
+    },
+    {
+      "case_id": "case_060",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer reports premium upgrade not reflecting for team and duplicate charge.",
+      "actual_summary": "User upgraded to premium but still sees the free tier and was billed twice this month.",
+      "passed": true
+    },
+    {
+      "case_id": "case_061",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer reports unauthorized charge and accuses service of fraud.",
+      "actual_summary": "Customer alleges an unauthorized charge and accuses the company of scamming them.",
+      "passed": true
+    },
+    {
+      "case_id": "case_062",
+      "expected_category": "general",
+      "actual_category": "account",
+      "expected_summary": "Customer asks how to add team members to their plan.",
+      "actual_summary": "User asks how to add additional users to their team plan.",
+      "passed": false
+    },
+    {
+      "case_id": "case_063",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports previously uploaded files missing without explanation.",
+      "actual_summary": "Uploaded files have disappeared without warning.",
+      "passed": true
+    },
+    {
+      "case_id": "case_064",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer reports invoice address not updating after change.",
+      "actual_summary": "Customer updated billing address but invoices still display the old address.",
+      "passed": true
+    },
+    {
+      "case_id": "case_065",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer reports unauthorized username change.",
+      "actual_summary": "User reports that their username was changed without their permission.",
+      "passed": true
+    },
+    {
+      "case_id": "case_066",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer sarcastically reports app being completely non-functional.",
+      "actual_summary": "User reports that the app appears smooth but overall nothing works, indicating a technical issue.",
+      "passed": true
+    },
+    {
+      "case_id": "case_067",
+      "expected_category": "general",
+      "actual_category": "general",
+      "expected_summary": "Customer asks about data retention practices.",
+      "actual_summary": "Inquiry about data retention policy.",
+      "passed": true
+    },
+    {
+      "case_id": "case_068",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer reports ongoing charges after cancellation with no prior support response.",
+      "actual_summary": "Customer reports being charged monthly despite canceling their account two months ago and receiving no response to previous inquiries.",
+      "passed": true
+    },
+    {
+      "case_id": "case_069",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports broken print layout with overlapping elements.",
+      "actual_summary": "Print layout is broken, with overlapping elements.",
+      "passed": true
+    },
+    {
+      "case_id": "case_070",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer requests merging of two accounts created with different emails.",
+      "actual_summary": "User requests to merge two accounts created with different email addresses.",
+      "passed": true
+    },
+    {
+      "case_id": "case_071",
+      "expected_category": "general",
+      "actual_category": "general",
+      "expected_summary": "Customer requests help with no further detail.",
+      "actual_summary": "User requests help without providing specifics.",
+      "passed": true
+    },
+    {
+      "case_id": "case_072",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer complains about incorrect billing currency and conversion rate.",
+      "actual_summary": "Customer is upset about being billed in a foreign currency with an unfavorable conversion rate.",
+      "passed": true
+    },
+    {
+      "case_id": "case_073",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports dark mode causing visual discomfort, requests fix.",
+      "actual_summary": "User reports that the dark mode is causing eye strain and requests a fix.",
+      "passed": true
+    },
+    {
+      "case_id": "case_074",
+      "expected_category": "account",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports login working on mobile but failing on desktop.",
+      "actual_summary": "User can log in on mobile but not on desktop using the same account and password.",
+      "passed": false
+    },
+    {
+      "case_id": "case_075",
+      "expected_category": "general",
+      "actual_category": "general",
+      "expected_summary": "Customer asks about HIPAA-compliant plan availability.",
+      "actual_summary": "Inquiry about whether HIPAA-compliant plans are offered.",
+      "passed": true
+    },
+    {
+      "case_id": "case_076",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer reports paid seats not fully activatable due to errors.",
+      "actual_summary": "Customer purchased 10 seats but can only activate 7, receiving errors for the remaining seats.",
+      "passed": true
+    },
+    {
+      "case_id": "case_077",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer reports subscription cancelled without notice.",
+      "actual_summary": "User reports that their subscription was canceled without prior notice.",
+      "passed": true
+    },
+    {
+      "case_id": "case_078",
+      "expected_category": "general",
+      "actual_category": "technical",
+      "expected_summary": "Customer inquires about higher API rate limit tiers for production.",
+      "actual_summary": "User states API rate limits are too low for production and asks about a higher tier.",
+      "passed": false
+    },
+    {
+      "case_id": "case_079",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports app crashing when attempting to share files.",
+      "actual_summary": "App crashes when trying to share a file with others.",
+      "passed": true
+    },
+    {
+      "case_id": "case_080",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer reports unsolicited subscription upgrade and unexpected charge.",
+      "actual_summary": "Customer reports an unexpected subscription upgrade leading to a higher charge.",
+      "passed": true
+    },
+    {
+      "case_id": "case_081",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports Google SSO redirecting to error page.",
+      "actual_summary": "SSO integration with Google is failing and redirects to an error page.",
+      "passed": true
+    },
+    {
+      "case_id": "case_082",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer asks about transferring account ownership.",
+      "actual_summary": "User asks if they can transfer their account to another person",
+      "passed": true
+    },
+    {
+      "case_id": "case_083",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer reports recurring duplicate charges in frustration.",
+      "actual_summary": "Customer reports being double‑charged multiple times and requests resolution.",
+      "passed": true
+    },
+    {
+      "case_id": "case_084",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports dashboard suddenly displaying blank white screen.",
+      "actual_summary": "User reports the dashboard now displays only a white screen after previously working fine.",
+      "passed": true
+    },
+    {
+      "case_id": "case_085",
+      "expected_category": "general",
+      "actual_category": "billing",
+      "expected_summary": "Customer asks about refund processing time.",
+      "actual_summary": "User asks about the time required to process a refund.",
+      "passed": false
+    },
+    {
+      "case_id": "case_086",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer is locked out after email change left account unverifiable.",
+      "actual_summary": "User changed their email but cannot verify the new address and the old email no longer works.",
+      "passed": true
+    },
+    {
+      "case_id": "case_087",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports file download spinning indefinitely.",
+      "actual_summary": "User cannot download files as the download keeps loading indefinitely.",
+      "passed": true
+    },
+    {
+      "case_id": "case_088",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer reports being billed for team plan instead of individual plan.",
+      "actual_summary": "Customer was charged the team plan rate despite selecting the individual plan.",
+      "passed": true
+    },
+    {
+      "case_id": "case_089",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports significant notification delivery delay.",
+      "actual_summary": "Notifications are delayed by 3–4 hours, making them useless.",
+      "passed": true
+    },
+    {
+      "case_id": "case_090",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer requests refund and reports missing password reset emails.",
+      "actual_summary": "The customer requests a refund for last month and reports that their password reset email never arrives.",
+      "passed": true
+    },
+    {
+      "case_id": "case_091",
+      "expected_category": "general",
+      "actual_category": "general",
+      "expected_summary": "Customer asks for comparison between Pro and Business plan tiers.",
+      "actual_summary": "User asks about the differences between the Pro and Business plans.",
+      "passed": true
+    },
+    {
+      "case_id": "case_092",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer reports entire team unable to log in since yesterday.",
+      "actual_summary": "Team unable to log in since yesterday",
+      "passed": true
+    },
+    {
+      "case_id": "case_093",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports all projects deleted, framed sarcastically.",
+      "actual_summary": "User praises the app but reports that it deleted all their projects.",
+      "passed": true
+    },
+    {
+      "case_id": "case_094",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer asks how to update stored payment card details.",
+      "actual_summary": "User wants to know how to update the credit card on file.",
+      "passed": true
+    },
+    {
+      "case_id": "case_095",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports app not opening on one of two Windows 11 devices.",
+      "actual_summary": "The user reports the app works on their laptop but fails to open on their PC, both running Windows 11.",
+      "passed": true
+    },
+    {
+      "case_id": "case_096",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer reports promised discount not applied to invoice.",
+      "actual_summary": "Customer reports a 20% discount promised by sales was not applied to their invoice.",
+      "passed": true
+    },
+    {
+      "case_id": "case_097",
+      "expected_category": "technical",
+      "actual_category": "technical",
+      "expected_summary": "Customer reports app language setting always reverting to English.",
+      "actual_summary": "User cannot change the app language; it keeps reverting to English.",
+      "passed": true
+    },
+    {
+      "case_id": "case_098",
+      "expected_category": "account",
+      "actual_category": "account",
+      "expected_summary": "Customer reports active unauthorized access to account in real time.",
+      "actual_summary": "User reports unauthorized access to their account and requests immediate assistance.",
+      "passed": true
+    },
+    {
+      "case_id": "case_099",
+      "expected_category": "billing",
+      "actual_category": "billing",
+      "expected_summary": "Customer reports unexpected charge despite signing up for free plan.",
+      "actual_summary": "Customer signed up for the free plan but sees an unexpected charge despite not providing card details.",
+      "passed": true
+    },
+    {
+      "case_id": "case_100",
+      "expected_category": "technical",
+      "actual_category": "general",
+      "expected_summary": "Long-term customer reports app crash, duplicate charge, broken password reset, and poor support experience.",
+      "actual_summary": "Customer reports multiple issues—app crashes, double billing, password reset failure, and poor support—considering canceling their subscription.",
+      "passed": false
+    }
+  ]
+}
