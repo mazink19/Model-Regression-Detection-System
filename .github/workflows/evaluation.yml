@@ -31,6 +31,7 @@ jobs:
       - name: Run evaluation
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: uv run python -m app.evaluate_ci
 
       - name: Upload evaluation report
