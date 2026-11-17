@@ -1,8 +1,10 @@
-# Model Regression Detector
+# Model Regression Detection System
+
+[![Agent evaluation](https://github.com/mazink19/Model-Regression-Detection-System/actions/workflows/agent-eval.yml/badge.svg?branch=main)](https://github.com/mazink19/Model-Regression-Detection-System/actions/workflows/agent-eval.yml)
 
 Model Regression Detector is a small evaluation harness for checking whether changes to an LLM application make its behavior worse. It runs examples from a dataset, scores the resulting traces, saves results, compares a run with a baseline, and produces reports that can be reviewed locally or in CI.
 
-This repository currently contains two related pieces:
+This repository has two related pieces:
 
 1. The original single-call evaluator under `app/`, which compares model answers against a golden dataset.
 2. The newer `agent_eval/` harness, which evaluates tool-using agents and is integrated with Career Copilot's job-matching LangGraph.
@@ -11,12 +13,15 @@ The agent harness is the active architecture milestone. See [architecture.md](ar
 
 ## What an evaluation does
 
-```text
-Dataset cases -> Agent or model -> Trace / answer -> Scorers -> Saved run
-                                                               |
-Baseline run <---------------- Comparison and regression gate <-+
-                                  |
-                                  +-> HTML, JSON, and Markdown reports
+```mermaid
+flowchart LR
+    D[Evaluation dataset] --> A[Agent or model]
+    A --> T[Trace and answer]
+    T --> S[Scorers]
+    S --> R[Saved run]
+    B[Named baseline] --> C[Comparison and gate]
+    R --> C
+    C --> H[HTML, JSON, Markdown reports]
 ```
 
 Each dataset case describes an input and the expected behavior. For agent cases, expectations can include the tools that should be called, argument values, ordering, and required answer content. Scorers turn the observed trace into pass/fail results and metrics. A comparison checks the current run against a named baseline; CI can fail when the comparison detects a regression.
@@ -63,6 +68,8 @@ Replace `<run-id>` with the ID printed by the first command. `gate` exits with s
 
 The standalone fake adapter is useful for trying the runner, database, comparison, and reporting flow. It builds an expected trace from each case, so it is not a substitute for evaluating a real agent implementation.
 
+The comparison logic has a synthetic negative-control test: `test_gate_detects_degradation_and_report_contains_regression` verifies that a deliberately failing evaluation is reported as a regression and fails the gate. This checks the harness mechanics. It is not yet evidence from a deliberately broken Career Copilot change or a red/green pull request; that end-to-end demonstration is milestone M7 and remains open.
+
 ## Evaluate Career Copilot
 
 The integration invokes Career Copilot's actual job-matching graph. Run it from Career Copilot's backend directory so that its dependencies and local environment configuration are available. Set `MRDS_ROOT` to the absolute path of this repository first:
@@ -71,6 +78,14 @@ The integration invokes Career Copilot's actual job-matching graph. Run it from 
 $env:MRDS_ROOT = "E:\Model-Regression-Detection-System"
 $env:PYTHONPATH = $env:MRDS_ROOT
 python "$env:MRDS_ROOT\scripts\run_career_copilot_eval.py" --backend .
+```
+
+On macOS or Linux, from the Career Copilot backend directory:
+
+```bash
+export MRDS_ROOT="/path/to/Model-Regression-Detection-System"
+export PYTHONPATH="$MRDS_ROOT${PYTHONPATH:+:$PYTHONPATH}"
+python "$MRDS_ROOT/scripts/run_career_copilot_eval.py" --backend .
 ```
 
 The script loads the 30 cases from `dataset/agent_eval_sample.yaml` and saves its run in this repository at `results/career-copilot.sqlite`. It prints the run ID, pass count, `pass@k`, `pass^k`, and any failures. `pass@k` means a case passed at least once across its repeats; `pass^k` means it passed every repeat.
@@ -104,13 +119,15 @@ The named `main` baseline contains one recorded result for each of the 30 cases.
 | `main` | 30 | 1 | 30/30 | 100% | 100% |
 | `main-2case` (archived) | 2 | 5 | 10/10 | 100% | 100% |
 
-The latest full replay passed all 30 cases with cache hits and passed the comparison gate against `main`. Review the checked-in [evaluation summary](reports/agent-eval/summary.md) or [HTML report](reports/agent-eval/report.html). The cache and SQLite database provide the replay inputs and baseline history used by CI.
+The latest full replay passed all 30 cases with cache hits and passed the comparison gate against `main`. Review the checked-in [evaluation summary](reports/agent-eval/summary.md) or [HTML report](reports/agent-eval/report.html). The HTML report is linked directly so it can be opened from the repository; the cache and SQLite database provide the replay inputs and baseline history used by CI.
+
+The current dataset tests strong and weak job matches, including sparse resumes. It does not yet test ambiguous requests, tool failures, forbidden-tool behavior, or loops as distinct Career Copilot scenarios. The harness has failure labels for conditions such as `wrong_tool`, `missing_tool_call`, `bad_args`, `loop`, `unhandled_tool_error`, `rate_limit`, and `cache_miss`; their code paths have unit-level coverage, but the current all-passing Career Copilot run does not provide a real-data failure breakdown. Expanding the dataset and publishing a deliberately degraded run are open work.
 
 ## GitHub Actions
 
 The [agent evaluation workflow](.github/workflows/agent-eval.yml) runs on relevant pushes and pull requests targeting `main`, and can also be started manually from GitHub Actions. It checks out the Career Copilot backend, installs both projects, runs the harness tests, replays the 30 cases with the committed cache, compares the result with the `main` baseline, and uploads the generated report. For same-repository pull requests, it also updates a summary comment. A failed baseline gate fails the workflow.
 
-The workflow reads the committed `baseline/career-copilot-cache.json` and `results/career-copilot.sqlite`. The replay is configured with placeholder environment variables and uses the cache, so CI does not need live provider credentials. It checks out Career Copilot's `main` branch; changes to that upstream branch can therefore affect future CI runs.
+The workflow reads the committed `baseline/career-copilot-cache.json` and `results/career-copilot.sqlite`. The replay is configured with placeholder environment variables and uses the cache, so CI does not need live provider credentials. Career Copilot is pinned to commit `0c745e4978565ac91d4bdb539073822faf11e12b` so unrelated upstream changes do not silently change the integration under test. Update the pin deliberately when validating a newer target version.
 
 ## Project layout
 

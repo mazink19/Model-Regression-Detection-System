@@ -45,7 +45,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: mazink19/ai-career-copilot
-          ref: main
+          # Pin the integration dependency so unrelated upstream commits do
+          # not change this workflow's behavior. Update intentionally.
+          ref: 0c745e4978565ac91d4bdb539073822faf11e12b
           path: target-career-copilot
 
       - name: Set up Python
