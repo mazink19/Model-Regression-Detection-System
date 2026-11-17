@@ -1,0 +1,141 @@
+name: Agent evaluation
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/workflows/agent-eval.yml"
+      - "agent_eval/**"
+      - "dataset/agent_eval_sample.yaml"
+      - "baseline/career-copilot-cache.json"
+      - "results/career-copilot.sqlite"
+      - "scripts/run_career_copilot_eval.py"
+      - "external_agents/ai-career-copilot/**"
+      - "pyproject.toml"
+      - "uv.lock"
+      - "tests/**"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/agent-eval.yml"
+      - "agent_eval/**"
+      - "dataset/agent_eval_sample.yaml"
+      - "baseline/career-copilot-cache.json"
+      - "results/career-copilot.sqlite"
+      - "scripts/run_career_copilot_eval.py"
+      - "external_agents/ai-career-copilot/**"
+      - "pyproject.toml"
+      - "uv.lock"
+      - "tests/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  replay-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out evaluation harness
+        uses: actions/checkout@v4
+
+      - name: Check out Career Copilot backend
+        uses: actions/checkout@v4
+        with:
+          repository: mazink19/ai-career-copilot
+          ref: main
+          path: target-career-copilot
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          cache-dependency-glob: |
+            uv.lock
+            target-career-copilot/backend/uv.lock
+
+      - name: Install harness dependencies
+        run: uv sync --frozen
+
+      - name: Install Career Copilot backend dependencies
+        working-directory: target-career-copilot/backend
+        run: uv sync --frozen
+
+      - name: Run harness tests
+        run: uv run --project . python -m pytest -q
+
+      - name: Replay Career Copilot cases
+        id: replay
+        working-directory: target-career-copilot/backend
+        env:
+          DATABASE_URL: sqlite:///agent-eval-ci.db
+          SECRET_KEY: ci-replay-placeholder
+          ALGORITHM: HS256
+          GROQ_API_KEY: ci-replay-placeholder
+          ACCESS_TOKEN_EXPIRE_MINUTES: "30"
+          LANGSMITH_API_KEY: ci-replay-placeholder
+        run: >-
+          uv run --project . python
+          "${{ github.workspace }}/scripts/run_career_copilot_eval.py"
+          --backend "${{ github.workspace }}/target-career-copilot/backend"
+          --repeats 1 --cache-mode replay
+          --db "${{ github.workspace }}/results/career-copilot.sqlite"
+          --run-id-output "$GITHUB_OUTPUT"
+
+      - name: Enforce baseline gate
+        id: gate
+        continue-on-error: true
+        run: >-
+          uv run --project . python -m agent_eval.cli gate
+          --run "${{ steps.replay.outputs.run_id }}"
+          --baseline main --db results/career-copilot.sqlite
+
+      - name: Generate comparison report
+        id: report
+        if: ${{ always() && steps.replay.outcome == 'success' }}
+        run: >-
+          uv run --project . python -m agent_eval.cli report
+          --run "${{ steps.replay.outputs.run_id }}"
+          --baseline main --db results/career-copilot.sqlite
+          --out reports/agent-eval
+
+      - name: Upload evaluation report
+        if: ${{ always() && steps.report.outcome == 'success' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent-evaluation-report
+          path: reports/agent-eval/
+
+      - name: Update pull request summary
+        if: ${{ always() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && steps.report.outcome == 'success' }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const marker = '<!-- agent-eval-summary -->';
+            const summary = fs.readFileSync('reports/agent-eval/summary.md', 'utf8');
+            const body = `${marker}\n${summary}`;
+            const { owner, repo } = context.repo;
+            const issue_number = context.issue.number;
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner, repo, issue_number, per_page: 100
+            });
+            const existing = comments.find(comment =>
+              comment.user.type === 'Bot' && comment.body.includes(marker)
+            );
+            if (existing) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            } else {
+              await github.rest.issues.createComment({ owner, repo, issue_number, body });
+            }
+
+      - name: Fail job when baseline gate fails
+        if: ${{ steps.gate.outcome == 'failure' }}
+        run: exit 1

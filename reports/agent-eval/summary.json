@@ -1,0 +1,2036 @@
+{
+  "baseline_run": "d1727734099f41bbbeba6bff1fc78e5a",
+  "current_run": "89bff317d3d948d9b45a4eebf636df07",
+  "passed": true,
+  "regressions": [],
+  "improvements": [],
+  "flaky_cases": [],
+  "pass_at_k": 1.0,
+  "pass_pow_k": 1.0,
+  "metrics": [
+    {
+      "metric": "no_hallucinated_tool",
+      "baseline": 1.0,
+      "current": 1.0,
+      "delta": 0.0
+    },
+    {
+      "metric": "step_efficiency",
+      "baseline": 1.0,
+      "current": 1.0,
+      "delta": 0.0
+    },
+    {
+      "metric": "task_success",
+      "baseline": 1.0,
+      "current": 1.0,
+      "delta": 0.0
+    },
+    {
+      "metric": "task_success_rate",
+      "baseline": 1.0,
+      "current": 1.0,
+      "delta": 0.0
+    },
+    {
+      "metric": "tool_args",
+      "baseline": 1.0,
+      "current": 1.0,
+      "delta": 0.0
+    },
+    {
+      "metric": "tool_order",
+      "baseline": 1.0,
+      "current": 1.0,
+      "delta": 0.0
+    },
+    {
+      "metric": "tool_selection",
+      "baseline": 1.0,
+      "current": 1.0,
+      "delta": 0.0
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "career-match-strong-001",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 5.396500000642845,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-strong-001",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.9076999995158985,
+            "cached": true
+          }
+        ],
+        "final_answer": "Strong match. Apply for this job.\nscore=85 matched_skills=['Python', 'FastAPI', 'LangGraph', 'RAG', 'PyTorch'] missing_skills=[] strengths=['Demonstrated experience building LLM-powered applications using PyTorch', 'Hands\u2011on experience with FastAPI and LangGraph for scalable AI services', 'Completed the AI Career Copilot project showcasing end\u2011to\u2011end LLM application development'] recommendations=['Provide quantitative metrics of model performance and latency', 'Detail production deployment and scaling experience for LLM applications']",
+        "total_latency_ms": 5.396500000642845,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-weak-001",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 2.2403000002668705,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-weak-001",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.31630000012228265,
+            "cached": true
+          }
+        ],
+        "final_answer": "Weak match. Consider improving your missing skills.\nscore=10 matched_skills=[] missing_skills=['Python', 'FastAPI', 'PostgreSQL', 'distributed systems', 'five years production experience'] strengths=[] recommendations=['Enroll in a comprehensive Python programming course to build foundational knowledge.', 'Complete a project using FastAPI to demonstrate experience with modern Python web frameworks.', 'Learn PostgreSQL through hands\u2011on tutorials and integrate it into a sample application.', 'Study distributed systems concepts (e.g., microservices, message queues) and implement a small distributed application.', 'Seek internship or entry\u2011level backend roles to accumulate production experience and build a portfolio.']",
+        "total_latency_ms": 2.2403000002668705,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-strong-backend-002",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.6840000007505296,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-strong-backend-002",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.2167999991797842,
+            "cached": true
+          }
+        ],
+        "final_answer": "Strong match. Apply for this job.\nscore=95 matched_skills=['Python', 'Django', 'PostgreSQL', 'REST APIs', 'Docker'] missing_skills=[] strengths=['Built production-ready Django APIs backed by PostgreSQL and Docker, demonstrating end-to-end backend development', 'Implemented RESTful services using Python and Django, showcasing API design and integration skills'] recommendations=[]",
+        "total_latency_ms": 1.6840000007505296,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-strong-data-science-003",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.856900000348105,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-strong-data-science-003",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.27489999956742395,
+            "cached": true
+          }
+        ],
+        "final_answer": "Strong match. Apply for this job.\nscore=90 matched_skills=['Python', 'SQL', 'pandas', 'scikit-learn', 'statistics'] missing_skills=[] strengths=['Built statistical models with pandas and scikit-learn, demonstrating practical data science skills.', 'Completed a customer forecasting model project, showcasing applied analytics experience.', 'Strong statistical background from education and hands\u2011on projects.'] recommendations=['Demonstrate SQL proficiency through project or professional experience, e.g., building ETL pipelines.', 'Showcase Python usage in production or larger\u2011scale data processing to strengthen evidence.', 'Consider adding experience with model deployment or production systems to align with typical data scientist roles.']",
+        "total_latency_ms": 1.856900000348105,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-strong-frontend-004",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 3.037899999981164,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-strong-frontend-004",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.39769999966665637,
+            "cached": true
+          }
+        ],
+        "final_answer": "Strong match. Apply for this job.\nscore=95 matched_skills=['JavaScript', 'TypeScript', 'React', 'CSS', 'accessibility'] missing_skills=[] strengths=['Built accessible React interfaces with TypeScript, showcasing expertise in JavaScript, React, and accessibility.', 'Demonstrated proficiency across core frontend technologies\u2014JavaScript, TypeScript, React, CSS\u2014through both skill listings and project work.'] recommendations=['Provide concrete examples of CSS implementation in projects to strengthen evidence of CSS proficiency.', 'Document production-level experience or additional projects that highlight CSS and accessibility usage to further validate expertise.']",
+        "total_latency_ms": 3.037899999981164,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-strong-devops-005",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.6453999996883795,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-strong-devops-005",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.21610000112559646,
+            "cached": true
+          }
+        ],
+        "final_answer": "Strong match. Apply for this job.\nscore=95 matched_skills=['Linux', 'Docker', 'Kubernetes', 'Terraform', 'CI/CD'] missing_skills=[] strengths=['Professional experience managing Kubernetes and Terraform deployments on Linux, demonstrating expertise in container orchestration and infrastructure as code.', 'Developed a CI/CD platform, showcasing hands\u2011on experience building and maintaining continuous integration and deployment pipelines.'] recommendations=['Acquire production-level Docker experience to reinforce containerization skills.', 'Detail specific CI/CD tools and metrics used in the platform to illustrate depth of pipeline expertise.']",
+        "total_latency_ms": 1.6453999996883795,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-strong-data-engineering-006",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.6364000002795365,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-strong-data-engineering-006",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.23129999863158446,
+            "cached": true
+          }
+        ],
+        "final_answer": "Strong match. Apply for this job.\nscore=95 matched_skills=['Python', 'SQL', 'Airflow', 'Spark', 'ETL'] missing_skills=[] strengths=['Built production-level Spark ETL pipelines orchestrated by Airflow, demonstrating end-to-end data engineering expertise.', 'Proficient in core data engineering stack (Python, SQL, Airflow, Spark, ETL) as evidenced by skill set and data warehouse project.'] recommendations=['Include specific metrics or performance improvements achieved in ETL pipelines to further strengthen the resume.']",
+        "total_latency_ms": 1.6364000002795365,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-strong-qa-007",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.6335000000253785,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-strong-qa-007",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.21670000023732428,
+            "cached": true
+          }
+        ],
+        "final_answer": "Strong match. Apply for this job.\nscore=95 matched_skills=['pytest', 'Selenium', 'API testing', 'CI/CD', 'test automation'] missing_skills=[] strengths=['Demonstrated end-to-end test automation using Selenium and pytest for both browser and API tests, indicating strong proficiency in UI and API testing.', 'Implemented a continuous testing suite, showcasing experience with CI/CD pipelines and test automation integration.'] recommendations=[]",
+        "total_latency_ms": 1.6335000000253785,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-strong-android-008",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.5032999999675667,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-strong-android-008",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.19360000078449957,
+            "cached": true
+          }
+        ],
+        "final_answer": "Strong match. Apply for this job.\nscore=95 matched_skills=['Kotlin', 'Android', 'Jetpack Compose', 'REST', 'testing'] missing_skills=[] strengths=['Delivered Kotlin Android apps with Jetpack Compose, demonstrating production experience in modern Android UI development.', 'Comprehensive skill set covering Kotlin, Android, Jetpack Compose, REST, and testing, indicating readiness for end-to-end mobile development.'] recommendations=[]",
+        "total_latency_ms": 1.5032999999675667,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-strong-ios-009",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.4408999995794147,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-strong-ios-009",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.1812999998946907,
+            "cached": true
+          }
+        ],
+        "final_answer": "Strong match. Apply for this job.\nscore=80 matched_skills=['Swift', 'SwiftUI', 'iOS', 'XCTest', 'REST'] missing_skills=[] strengths=['Hands\u2011on experience building and testing SwiftUI iOS applications, demonstrating proficiency in Swift, SwiftUI, iOS, and XCTest.', 'Clear knowledge of RESTful API integration as evidenced by listed skill.'] recommendations=['Add a portfolio of production\u2011level iOS projects that showcase REST API integration and performance metrics.', 'Seek opportunities to contribute to open\u2011source iOS projects or collaborate on team\u2011based app development to strengthen real\u2011world experience.']",
+        "total_latency_ms": 1.4408999995794147,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-strong-security-010",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.4678000006824732,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-strong-security-010",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.194500000361586,
+            "cached": true
+          }
+        ],
+        "final_answer": "Strong match. Apply for this job.\nscore=95 matched_skills=['threat modeling', 'SIEM', 'incident response', 'Python', 'cloud security'] missing_skills=[] strengths=['Led incident response and threat modeling for cloud services, demonstrating hands\u2011on experience in managing security incidents in cloud environments.', 'Proficient in Python, enabling automation of security monitoring tasks.', 'Experience with SIEM and security monitoring projects, indicating ability to analyze and respond to security events.'] recommendations=['Include specific examples of SIEM tools used and Python automation scripts to demonstrate depth of experience.']",
+        "total_latency_ms": 1.4678000006824732,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-strong-product-011",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 2.630800001497846,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-strong-product-011",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.5127999993419508,
+            "cached": true
+          }
+        ],
+        "final_answer": "Strong match. Apply for this job.\nscore=95 matched_skills=['roadmapping', 'analytics', 'stakeholder management', 'Agile', 'user research'] missing_skills=[] strengths=['Led Agile roadmap planning using product analytics and user research, demonstrating ability to translate data insights into actionable product strategy', 'Managed stakeholder expectations across product lifecycle, ensuring alignment between business objectives and technical execution'] recommendations=['Include quantitative metrics (e.g., user growth, revenue impact) to illustrate the business value of product initiatives', 'Provide more detailed descriptions of product launch outcomes to showcase end-to-end product delivery experience']",
+        "total_latency_ms": 2.630800001497846,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-strong-ux-012",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.5079000004334375,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-strong-ux-012",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.19640000027720816,
+            "cached": true
+          }
+        ],
+        "final_answer": "Strong match. Apply for this job.\nscore=95 matched_skills=['Figma', 'user research', 'wireframing', 'prototyping', 'usability testing'] missing_skills=[] strengths=['Demonstrated end-to-end design process by creating Figma prototypes informed by user research and usability testing', 'Strong foundation in interaction design education', 'Experience with mobile redesign project'] recommendations=[]",
+        "total_latency_ms": 1.5079000004334375,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-strong-mlops-013",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.560099999551312,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-strong-mlops-013",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.20339999900897965,
+            "cached": true
+          }
+        ],
+        "final_answer": "Strong match. Apply for this job.\nscore=95 matched_skills=['MLflow', 'Kubernetes', 'Docker', 'CI/CD', 'model monitoring'] missing_skills=[] strengths=['End-to-end deployment of MLflow models to Kubernetes with CI/CD, showcasing production MLOps workflow.', 'Built a model serving platform, demonstrating ability to design and implement scalable inference pipelines.', 'Proficient in model monitoring, ensuring continuous model performance tracking.'] recommendations=['Provide concrete examples of Docker usage in production environments to strengthen evidence of containerization expertise.', 'Include details of CI/CD pipeline components (e.g., tools, automation scripts) to illustrate depth of deployment automation.']",
+        "total_latency_ms": 1.560099999551312,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-strong-cloud-014",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 2.257999998619198,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-strong-cloud-014",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.36220000038156286,
+            "cached": true
+          }
+        ],
+        "final_answer": "Strong match. Apply for this job.\nscore=95 matched_skills=['AWS', 'IAM', 'Terraform', 'VPC', 'Python'] missing_skills=[] strengths=['Demonstrated hands\u2011on experience provisioning secure AWS VPC and IAM infrastructure using Terraform, directly aligning with core job responsibilities.', 'Comprehensive skill set covering all core cloud engineering technologies required for the role, including AWS, IAM, Terraform, VPC, and Python.'] recommendations=['Include more detailed information about the cloud migration project, such as scope, challenges, and outcomes, to showcase broader experience.', 'Highlight additional Python usage beyond Terraform scripts to demonstrate versatility in automation and scripting.']",
+        "total_latency_ms": 2.257999998619198,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-strong-analyst-015",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.963400000022375,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-strong-analyst-015",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.28500000007625204,
+            "cached": true
+          }
+        ],
+        "final_answer": "Strong match. Apply for this job.\nscore=95 matched_skills=['SQL', 'Tableau', 'Excel', 'data visualization', 'KPI reporting'] missing_skills=[] strengths=['Built Tableau KPI dashboards using SQL and Excel, demonstrating strong data visualization and reporting skills.', 'Experience in data analytics with a focus on KPI reporting, aligning with business metrics.'] recommendations=[]",
+        "total_latency_ms": 1.963400000022375,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-weak-musician-002",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.5326000011555152,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-weak-musician-002",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.19729999985429458,
+            "cached": true
+          }
+        ],
+        "final_answer": "Weak match. Consider improving your missing skills.\nscore=0 matched_skills=[] missing_skills=['Python', 'Django', 'PostgreSQL', 'REST APIs', 'Docker'] strengths=[] recommendations=['Acquire proficiency in Python programming, starting with basic syntax and data structures.', 'Learn the Django web framework, focusing on model-view-template architecture and deployment.', 'Gain experience with PostgreSQL, including database design, queries, and performance tuning.', 'Understand RESTful API design principles and practice building APIs with Django REST Framework.', 'Become familiar with Docker for containerization, including writing Dockerfiles and orchestrating services.']",
+        "total_latency_ms": 1.5326000011555152,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-weak-hr-003",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.5340999998443294,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-weak-hr-003",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.19100000099570025,
+            "cached": true
+          }
+        ],
+        "final_answer": "Weak match. Consider improving your missing skills.\nscore=10 matched_skills=[] missing_skills=['Python', 'SQL', 'pandas', 'scikit-learn', 'statistics'] strengths=[] recommendations=['Acquire proficiency in Python programming, focusing on data manipulation and analysis.', 'Learn SQL for querying relational databases, including basic CRUD operations and joins.', 'Gain experience with pandas for data cleaning, transformation, and analysis.', 'Study scikit-learn to build and evaluate machine learning models, covering supervised and unsupervised learning.', 'Develop a solid foundation in statistics, including probability, hypothesis testing, and regression analysis.', 'Build a portfolio of data science projects that demonstrate end-to-end workflows using the above tools.']",
+        "total_latency_ms": 1.5340999998443294,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-weak-accountant-004",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.6259000003628898,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-weak-accountant-004",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.21209999977145344,
+            "cached": true
+          }
+        ],
+        "final_answer": "Weak match. Consider improving your missing skills.\nscore=0 matched_skills=[] missing_skills=['JavaScript', 'TypeScript', 'React', 'CSS', 'accessibility'] strengths=[] recommendations=['Learn JavaScript to build dynamic web interfaces', 'Learn TypeScript for type safety in frontend code', 'Learn React to create reusable UI components', 'Learn CSS to style web pages effectively', 'Learn accessibility best practices to ensure inclusive design']",
+        "total_latency_ms": 1.6259000003628898,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-weak-teacher-005",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.729099998556194,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-weak-teacher-005",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.22080000053392723,
+            "cached": true
+          }
+        ],
+        "final_answer": "Weak match. Consider improving your missing skills.\nscore=10 matched_skills=[] missing_skills=['Linux', 'Docker', 'Kubernetes', 'Terraform', 'CI/CD'] strengths=[] recommendations=['Enroll in an introductory Linux course to build command-line proficiency.', 'Complete a hands\u2011on Docker tutorial and create containerized applications.', 'Learn Kubernetes fundamentals and deploy a sample application on a local cluster.', 'Study Terraform and practice writing infrastructure-as-code for a small project.', 'Set up a CI/CD pipeline using a tool such as GitHub Actions or GitLab CI to automate build, test, and deployment.']",
+        "total_latency_ms": 1.729099998556194,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-weak-retail-006",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.476199999160599,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-weak-retail-006",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.19740000061574392,
+            "cached": true
+          }
+        ],
+        "final_answer": "Weak match. Consider improving your missing skills.\nscore=10 matched_skills=[] missing_skills=['Python', 'SQL', 'Airflow', 'Spark', 'ETL'] strengths=[] recommendations=['Acquire proficiency in Python programming, focusing on data manipulation libraries such as pandas and NumPy.', 'Learn SQL and practice writing complex queries against relational databases.', 'Gain hands-on experience with Apache Airflow for workflow orchestration.', 'Develop skills in Apache Spark for large-scale data processing.', 'Build end-to-end ETL pipelines to demonstrate understanding of data ingestion, transformation, and loading.']",
+        "total_latency_ms": 1.476199999160599,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-weak-chef-007",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.6514999988430645,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-weak-chef-007",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.28169999859528616,
+            "cached": true
+          }
+        ],
+        "final_answer": "Weak match. Consider improving your missing skills.\nscore=0 matched_skills=[] missing_skills=['pytest', 'Selenium', 'API testing', 'CI/CD', 'test automation'] strengths=[] recommendations=['Acquire hands\u2011on experience with Python and pytest through online courses and small projects.', 'Learn Selenium for web UI automation and practice building test suites.', 'Develop API testing skills using tools like Postman or REST-assured and write automated tests.', 'Gain familiarity with CI/CD pipelines (e.g., Jenkins, GitHub Actions) to integrate automated tests into the build process.']",
+        "total_latency_ms": 1.6514999988430645,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-weak-carpenter-008",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.4455000000452856,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-weak-carpenter-008",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.19319999955769163,
+            "cached": true
+          }
+        ],
+        "final_answer": "Weak match. Consider improving your missing skills.\nscore=0 matched_skills=[] missing_skills=['Kotlin', 'Android', 'Jetpack Compose', 'REST', 'testing'] strengths=[] recommendations=['Acquire proficiency in Kotlin programming language', 'Gain experience developing Android applications', 'Learn Jetpack Compose for UI development', 'Understand RESTful API integration', 'Practice unit and UI testing for Android']",
+        "total_latency_ms": 1.4455000000452856,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-weak-lab-tech-009",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.5102000015758676,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-weak-lab-tech-009",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.20390000099723693,
+            "cached": true
+          }
+        ],
+        "final_answer": "Weak match. Consider improving your missing skills.\nscore=10 matched_skills=[] missing_skills=['Swift', 'SwiftUI', 'iOS', 'XCTest', 'REST'] strengths=[] recommendations=['Take an introductory course on Swift programming to build foundational knowledge.', 'Develop a small iOS application using SwiftUI that consumes a REST API and includes unit tests with XCTest.', 'Contribute to an open\u2011source iOS project or create a portfolio of sample apps to demonstrate practical experience.']",
+        "total_latency_ms": 1.5102000015758676,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-weak-photographer-010",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.580199999807519,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-weak-photographer-010",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.20330000006651971,
+            "cached": true
+          }
+        ],
+        "final_answer": "Weak match. Consider improving your missing skills.\nscore=5 matched_skills=[] missing_skills=['threat modeling', 'SIEM', 'incident response', 'Python', 'cloud security'] strengths=[] recommendations=['Enroll in an introductory Python programming course to build foundational coding skills.', 'Complete an online course or certification in threat modeling to understand risk assessment techniques.', 'Learn about Security Information and Event Management (SIEM) platforms through hands\u2011on labs or vendor training.', 'Study incident response procedures and best practices, possibly through a structured training program.', 'Acquire basic cloud security knowledge, such as AWS or Azure security fundamentals, via online modules.']",
+        "total_latency_ms": 1.580199999807519,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-weak-coach-011",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.426700000592973,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-weak-coach-011",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.19299999985378236,
+            "cached": true
+          }
+        ],
+        "final_answer": "Weak match. Consider improving your missing skills.\nscore=10 matched_skills=[] missing_skills=['roadmapping', 'analytics', 'stakeholder management', 'Agile', 'user research'] strengths=[] recommendations=['Acquire product management experience through internships or project-based roles to demonstrate roadmapping and stakeholder management skills.', 'Complete online courses or certifications in product analytics and user research to build relevant technical knowledge.', 'Participate in Agile workshops or obtain Scrum certification to showcase familiarity with Agile methodologies.']",
+        "total_latency_ms": 1.426700000592973,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-weak-electrician-012",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.458600001569721,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-weak-electrician-012",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.1838000007410301,
+            "cached": true
+          }
+        ],
+        "final_answer": "Weak match. Consider improving your missing skills.\nscore=5 matched_skills=[] missing_skills=['Figma', 'user research', 'wireframing', 'prototyping', 'usability testing'] strengths=[] recommendations=['Enroll in an online UX design course covering Figma, user research, wireframing, prototyping, and usability testing.', 'Build a portfolio of UX projects to demonstrate practical experience.', 'Seek internship or freelance opportunities to apply UX skills in real-world settings.']",
+        "total_latency_ms": 1.458600001569721,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-weak-sparse-013",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.9869999996444676,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-weak-sparse-013",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.23329999930865597,
+            "cached": true
+          }
+        ],
+        "final_answer": "Weak match. Consider improving your missing skills.\nscore=0 matched_skills=[] missing_skills=['MLflow', 'Kubernetes', 'Docker', 'CI/CD', 'model monitoring'] strengths=[] recommendations=['Complete a hands\u2011on MLflow tutorial and deploy a model to a Docker container to demonstrate end\u2011to\u2011end MLOps workflow.', 'Build a Kubernetes cluster (e.g., minikube or a cloud provider) and deploy a simple microservice to gain practical cluster management experience.', 'Set up a CI/CD pipeline using GitHub Actions or Jenkins to automate model training, testing, and deployment, showcasing continuous integration practices.', 'Implement basic model monitoring with Prometheus/Grafana or MLflow tracking to learn how to collect and visualize model performance metrics.']",
+        "total_latency_ms": 1.9869999996444676,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-weak-sparse-014",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.5681999993830686,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-weak-sparse-014",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.27720000070985407,
+            "cached": true
+          }
+        ],
+        "final_answer": "Weak match. Consider improving your missing skills.\nscore=0 matched_skills=[] missing_skills=['AWS', 'IAM', 'Terraform', 'VPC', 'Python'] strengths=[] recommendations=['Gain hands\u2011on experience with AWS by completing the AWS Certified Solutions Architect \u2013 Associate course and building a small production\u2011grade application on EC2, S3, and RDS.', 'Learn and practice Terraform by creating infrastructure-as-code for a multi\u2011region VPC, subnets, and security groups, and by deploying it to a real AWS account.', 'Develop proficiency in IAM by setting up fine\u2011grained policies, roles, and permissions for a sample application, and document the process.', 'Build a VPC from scratch using Terraform, including public/private subnets, NAT gateways, and route tables, and validate connectivity.', 'Improve Python skills by writing scripts that automate AWS resource provisioning, monitoring, and cleanup, and by contributing to open\u2011source projects or building a portfolio of small utilities.']",
+        "total_latency_ms": 1.5681999993830686,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    },
+    {
+      "case_id": "career-match-weak-sparse-015",
+      "repeat_idx": 0,
+      "passed": true,
+      "scores": [
+        {
+          "metric": "tool_selection",
+          "value": 1.0,
+          "explanation": "Matched 0/0 expected calls; no forbidden calls"
+        },
+        {
+          "metric": "tool_args",
+          "value": 1.0,
+          "explanation": "Arguments matched for 0/0 expected calls"
+        },
+        {
+          "metric": "tool_order",
+          "value": 1.0,
+          "explanation": "Expected call ordering"
+        },
+        {
+          "metric": "no_hallucinated_tool",
+          "value": 1.0,
+          "explanation": "All calls are registered"
+        },
+        {
+          "metric": "task_success",
+          "value": 1.0,
+          "explanation": "Outcome text checks"
+        },
+        {
+          "metric": "step_efficiency",
+          "value": 1.0,
+          "explanation": "0 tool steps for 0 expected"
+        },
+        {
+          "metric": "latency_ms",
+          "value": 1.4805000009801006,
+          "explanation": "Total trace latency"
+        },
+        {
+          "metric": "tokens",
+          "value": 0.0,
+          "explanation": "Total token count"
+        }
+      ],
+      "failures": [],
+      "trace": {
+        "case_id": "career-match-weak-sparse-015",
+        "steps": [
+          {
+            "kind": "llm",
+            "model": "ChatGroq",
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "latency_ms": 0.18850000014936086,
+            "cached": true
+          }
+        ],
+        "final_answer": "Weak match. Consider improving your missing skills.\nscore=0 matched_skills=[] missing_skills=['SQL', 'Tableau', 'Excel', 'data visualization', 'KPI reporting'] strengths=[] recommendations=['Acquire proficiency in SQL through online courses or tutorials.', 'Learn Tableau for interactive data visualization and dashboards.', 'Develop advanced Excel skills, including pivot tables and formulas.', 'Gain experience in creating data visualizations and KPI reports.', 'Build a portfolio of projects demonstrating these skills.']",
+        "total_latency_ms": 1.4805000009801006,
+        "total_tokens": 0,
+        "terminated_by": "answer",
+        "error_type": null
+      }
+    }
+  ]
+}

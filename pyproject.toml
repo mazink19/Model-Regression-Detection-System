@@ -1,7 +1,7 @@
 [project]
 name = "model-regression-detector"
 version = "0.1.0"
-description = "Add your description here"
+description = "LLM evaluation and regression detection system"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
@@ -12,3 +12,6 @@ dependencies = [
     "pytest>=9.1.1",
     "pyyaml>=6.0.3",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
